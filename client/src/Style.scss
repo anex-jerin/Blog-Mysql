@@ -57,14 +57,13 @@ a {
       display: flex;
       align-items: center;
       flex-direction: column;
-      height: 80vh;
-      width: 50vw;
+      padding: 7rem 4rem;
       background-color: $page-bg;
       border-radius: 5px;
       box-shadow: 5px 5px 15px 3px rgba(128, 128, 128, 0.185);
       h1 {
         font-size: 4rem;
-        margin: 6rem 0;
+        margin-bottom: 5rem;
         &::after {
           content: '';
           display: inline-block;
@@ -112,9 +111,11 @@ a {
           }
         }
         .check {
+          margin: auto;
           display: flex;
           justify-content: space-between;
           align-items: center;
+          gap: 2rem;
           div {
             display: flex;
             align-items: center;
