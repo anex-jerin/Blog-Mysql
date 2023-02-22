@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const Register = () => {
   return (
     <div className='l-container'>
@@ -8,16 +10,17 @@ const Register = () => {
           <input type='text' placeholder='Name' />
           <input type='password' placeholder='Password' />
           <input type='password' placeholder='Repeat password' />
-          <div className="check">
-            <button>REGISTER</button></div>
+          <div className='check'>
+            <button>REGISTER</button>
+          </div>
         </form>
         <div className='p-link'>
-          <a className='blue' href='/login'>
-            Login now
-          </a>
-          <a className='red' href='/reset'>
+          <Link className='blue' to='/login'>
+            Have an account Login
+          </Link>
+          <Link className='red' to='/reset'>
             Forgot password ?
-          </a>
+          </Link>
         </div>
       </div>
     </div>

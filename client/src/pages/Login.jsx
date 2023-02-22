@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 const Login = () => {
   return (
     <div className='l-container'>
@@ -15,8 +16,13 @@ const Login = () => {
           </div>
         </form>
         <div className='p-link'>
-          <a className="blue" href='/register'> Register now</a>
-          <a className="red" href='/reset'>Forgot password ?</a>
+          <Link className='blue' to='/register'>
+            {' '}
+            Register now
+          </Link>
+          <Link className='red' to='/reset'>
+            Forgot password ?
+          </Link>
         </div>
       </div>
     </div>
