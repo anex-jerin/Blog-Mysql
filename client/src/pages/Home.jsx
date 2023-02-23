@@ -56,18 +56,18 @@ const Home = () => {
         <h1>Posts</h1>
         {posts.map((post) => {
           return (
-            <Link to={`/post/${post.id}`}>
-              <div key={post.id} className='post'>
-                <img src={post.img} width='100px' alt='' />
+            <div key={post.id} className='post'>
+              <img src={post.img} width='100px' alt='' />
+              <Link to={`/post/${post.id}`}>
                 <div className='content'>
-                  <h2>{post.title}</h2>
-                  <p>{post.desc}</p>
+                  <h1>{post.title.slice(0,50)}</h1>
+                  <p>{post.desc.slice(0,300)}</p>
                   <div>
                     <button>Read more</button>
                   </div>
                 </div>
-              </div>
-            </Link>
+              </Link>
+            </div>
           );
         })}
       </div>
