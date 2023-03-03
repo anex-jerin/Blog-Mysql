@@ -1,28 +1,53 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 const Register = () => {
   const [inputs, setInputs] = useState({
-    username: '',
+    name: '',
     password: '',
     email: '',
   });
-  const handleChange = e =>{
+  const handleChange = (e) => {
     e.preventDefault();
-    setInputs(prev=>({[e.target.name]:e.target.value}))
-  }
-
-  console.log(inputs)
+    setInputs((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    try {
+      const res = axios.post('/register',inputs)
+      console.log(res.status)
+    } catch (error) {
+      console.log(error)
+    }
+    
+  };
+  console.log(inputs);
   return (
     <div className='l-container'>
       <div className='auth'>
         <h1>Register</h1>
         <form>
-          <input type='text' placeholder='Username' name='username' />
-          <input type='text' placeholder='email' name='email'  />
-          <input type='password' placeholder='Password' name='password'  />
+          <input
+            type='text'
+            placeholder='Username'
+            name='name'
+            onChange={handleChange}
+          />
+          <input
+            type='text'
+            placeholder='email'
+            name='email'
+            onChange={handleChange}
+          />
+          <input
+            type='password'
+            placeholder='Password'
+            name='password'
+            onChange={handleChange}
+          />
           <div className='check'>
-            <button onClick={()=>handleChange}>REGISTER</button>
+            <button onClick={handleSubmit}>REGISTER</button>
           </div>
         </form>
         <div className='p-link'>
